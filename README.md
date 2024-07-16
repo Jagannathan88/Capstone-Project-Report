@@ -15,6 +15,35 @@
     • Read and stores the user data in a variable TAG
     • Executes the build command docker build -t "$IMAGE_NAME:$TAG" .
     • Used if_else condition to display the success and failure message of build process
+
+ # Deploy-to-docker-hub.sh
+#### User Prompts for Docker Image Details
+    • Prompts the user to enter the Docker image name, tag, Docker Hub username, and repository name, and stores the inputs in variables IMAGE_NAME, TAG, DOCKER_USERNAME, and DOCKER_REPO, respectively.
+#### Build the Docker Image
+    • Builds the Docker image using the Dockerfile in the current directory.
+    • docker build -t "$IMAGE_NAME:$TAG" . builds the image and tags it with the specified name and tag.
+#### Check Build Success
+    • Checks if the previous command (the Docker build) was successful by evaluating $?, which holds the exit status of the last executed command.
+    • If the build was successful ($? -eq 0), it prints a success message.
+    • If the build failed, it prints an error message and exits the script with a non-zero status code.
+#### Tag the Docker Image
+    • Tags the Docker image with the Docker Hub repository name.
+    • docker tag "$IMAGE_NAME:$TAG" "$DOCKER_USERNAME/$DOCKER_REPO:$TAG" creates a new tag for the image to prepare it for pushing to Docker Hub.
+#### Push the Docker Image to Docker Hub
+    • Pushes the Docker image to the specified Docker Hub repository.
+    • docker push "$DOCKER_USERNAME/$DOCKER_REPO:$TAG" uploads the image to Docker Hub.
+#### Check Push Success
+    • Checks if the previous command (the Docker push) was successful by evaluating $?.
+    • If the push was successful ($? -eq 0), it prints a success message.
+    • If the push failed, it prints an error message and exits the script with a non-zero status code.
+#### Summary
+    This script automates the following tasks:
+    1. Prompts the user for the Docker image name, tag, Docker Hub username, and repository name.
+    2. Builds the Docker image.
+    3. Tags the Docker image with the specified Docker Hub repository.
+    4. Pushes the Docker image to Docker Hub.
+    5. Provides feedback on whether the build and push operations were successful or not.
+    The checks for success at each step ensure that any issues are detected early, and the script exits with an appropriate message if something goes wrong.
     
  # Deploy.sh
 ### Prompting for Input
