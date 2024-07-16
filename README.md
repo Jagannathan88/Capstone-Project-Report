@@ -11,7 +11,7 @@
     • Executes the build command docker build -t "$IMAGE_NAME:$TAG" .
     • Used if_else condition to display the success and failure message of build process
 
-## Testing video clips added in below mentioned files:
+## Testing video clips:
     • dev_ environment_auto_build_trigger.webm --> Video explanation for dev environment auto build trigger 
     • prod_ environment_auto_build_trigger.webm --> Video explanation for prod environment auto build trigger
     • tested_dev_prod_at_a_time.webm --> Made a video clip for dev and prod environment both testing at a time
