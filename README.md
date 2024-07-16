@@ -1,11 +1,11 @@
-Capstone Project repo: https://github.com/Jagannathan88/capstone-project.git
-Dockerfile: 
+# Capstone Project repo: https://github.com/Jagannathan88/capstone-project.git
+## Dockerfile: 
     • It pulls nginx latest docker image
     • Copy capstone-project app content to the web service directory in the nginx image 
     • Builds a custom nginx image of capstone web app
     • exposing port 80
 
-build.sh:
+## build.sh:
     • Read and stores the user data in a variable IMAGE_NAME
     • Read and stores the user data in a variable TAG
     • Executes the build command docker build -t "$IMAGE_NAME:$TAG" .
