@@ -1,0 +1,6 @@
+services:
+  web-app-image:
+    image: web-app-online:v1
+    container_name: my-web-container
+    ports:
+      - 80:80
