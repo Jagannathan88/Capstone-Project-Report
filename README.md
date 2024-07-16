@@ -21,7 +21,7 @@
     • prod_ environment_auto_build_trigger.webm --> Video explanation for prod environment auto build trigger
     • tested_dev_prod_at_a_time.webm --> Made a video clip for dev and prod environment both testing at a time
     
-## Jenkins script
+ # Jenkins script
 #### Environment Variables
     • DOCKER_HUB_CREDENTIALS: The ID of the Jenkins credentials for Docker Hub.
     • REPO_URL: URL of the GitHub repository.
@@ -32,4 +32,16 @@
 #### Checkout Stage
     • cleanWs(): Cleans the workspace before checking out the code.
     • git branch: "${env.BRANCH}", url: "${env.REPO_URL}": Checks out the specified branch from the GitHub repository.
-
+#### Build and Push Docker Image Stage
+    • docker.withRegistry('https://index.docker.io/v1/', "${env.DOCKER_HUB_CREDENTIALS}"): Authenticates with Docker Hub using the specified credentials.
+    • def dockerImage = docker.build("${env.DOCKER_IMAGE}"): Builds the Docker image.
+    • dockerImage.push(): Pushes the built Docker image to Docker Hub.
+#### Deploy Container Stage
+    • Stops and removes any existing container with the specified name.
+    • Runs the new Docker container with the specified image, mapping port 80 on the host to port 80 in the container.
+#### Post Actions
+    • post { always { ... } }: Executes the cleanup steps regardless of the pipeline's success or failure.
+    • sh 'docker container prune -f || true': Removes all stopped containers.
+    • sh 'docker image prune -f || true': Removes all unused images.
+    • sh 'docker volume prune -f || true': Removes all unused volumes.
+    • sh 'docker network prune -f || true': Removes all unused networks.
