@@ -1,4 +1,4 @@
-# Capstone Project repo: https://github.com/Jagannathan88/capstone-project.git
+### Capstone Project repo: https://github.com/Jagannathan88/capstone-project.git
 ## Dockerfile: 
     • It pulls nginx latest docker image
     • Copy capstone-project app content to the web service directory in the nginx image 
