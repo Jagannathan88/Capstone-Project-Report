@@ -10,6 +10,13 @@
     • Builds a custom nginx image of capstone web app
     • exposing port 80
 
+# docker-compose.yaml
+    • Services Definition: Specifies the start of service definitions in Docker Compose.
+    • Service Name (web-app-image): Identifies the service by the name web-app-image.
+    • Image (web-app-online:v1): Specifies the Docker image (web-app-online) and its version (v1) to use for the service.
+    • Container Name (my-web-container): Names the container as my-web-container when instantiated.
+    • Ports Mapping (- 80:80): Maps port 80 from the host to port 80 inside the container for web service accessibility.
+
 ## build.sh:
     • Read and stores the user data in a variable IMAGE_NAME
     • Read and stores the user data in a variable TAG
