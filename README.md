@@ -1,5 +1,8 @@
 ## Explained all about the project/screenshots in google docs:
     https://docs.google.com/document/d/e/2PACX-1vQ5zwMK63GUE6nBmOB1Fo3Q7C9MFsFWw05VcgsnJmC7Y1dF3ca0417gaxq-5Hj9PYbMcE2_rrfJiE3h/pub
+## Application url
+    http://65.2.152.97/
+    https://hub.docker.com/repository/docker/jagannathan88/prod/general
     
 ## Capstone Project repo: 
     https://github.com/Jagannathan88/capstone-project.git
@@ -144,3 +147,9 @@
     2. Creates an EC2 instance with Ubuntu Server, installs Jenkins and Docker, and configures them.
     3. Defines a security group that allows all TCP and SSH traffic.
     4. Outputs the public IP address of the EC2 instance.
+## Monitoring setup
+    • Modified nginx.config to expose metrics
+    • installed nginx-Prometheus-exploreter
+    • Prometheus for data source
+    • installed alertmanager and configured alertmanager.yml for email trigger
+    • Grafana for metrics visualization dashboard
