@@ -3,7 +3,7 @@
 ## Application url
     docker pull jagannathan88/prod:latest
     https://hub.docker.com/repository/docker/jagannathan88/prod/tags
-    https://hub.docker.com/repository/docker/jagannathan88/prod/general
+    https://hub.docker.com/repository/docker/jagannathan88/dev/tags
     http://65.2.152.97/
     
 ## Capstone Project repo: 
